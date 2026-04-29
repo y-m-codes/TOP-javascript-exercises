@@ -1,6 +1,6 @@
 const palindromes = function(string) {
   let stringLowerCase = string.toLowerCase();
-  let stringCleaned = stringLowerCase.replace(/[^a-zA-Z]/g, "");
+  let stringCleaned = stringLowerCase.replace(/[^a-zA-Z\d]/g, "");
 
   function reverseString(string) {
     let reversedString = "";
@@ -13,9 +13,9 @@ const palindromes = function(string) {
   let stringInReverse = reverseString(stringCleaned);
 
   if (stringCleaned === stringInReverse) {
-    return "This is a palindrome."
+    return true
   } else {
-    return "This is NOT a palindrome."
+    return false
   };
 };
 
@@ -29,4 +29,4 @@ console.log(palindromes("A nut for a jar of tuna."));
 
 
 // Do not edit below this line
-// module.exports = palindromes;
+module.exports = palindromes;
